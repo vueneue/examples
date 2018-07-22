@@ -1,8 +1,8 @@
 <template>
-  <div class="home">
-    <h1>Home page</h1>
+  <div class="anime">
+    <h1 class="anime-title">Anime JS</h1>
 
-    <p>
+    <p class="anime-content">
       Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aliquam egestas ligula elit, 
       id euismod nisi molestie id. Fusce euismod ligula erat, vitae tincidunt quam accumsan 
       vitae. Maecenas vestibulum magna eu ligula tincidunt, sed cursus nibh dapibus. 
@@ -16,7 +16,44 @@
 </template>
 
 <script>
+import anime from "animejs";
+
+const animDuration = 500;
+
 export default {
-  name: "home"
+  mounted() {
+    anime({
+      targets: ".anime-title",
+      opacity: [0, 1],
+      translateY: [-50, 0],
+      duration: animDuration
+    });
+
+    anime({
+      targets: ".anime-content",
+      opacity: [0, 1],
+      translateY: [50, 0],
+      duration: animDuration
+    });
+  },
+
+  beforeRouteLeave(to, from, next) {
+    anime({
+      targets: ".anime-title",
+      opacity: 0,
+      translateY: -50,
+      duration: animDuration
+    });
+
+    anime({
+      targets: ".anime-content",
+      opacity: 0,
+      translateY: 50,
+      duration: animDuration,
+      complete() {
+        next();
+      }
+    });
+  }
 };
 </script>
