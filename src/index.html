@@ -6,7 +6,9 @@
 </head>
 
 <body data-body-attrs>
-  <%= require('@/spa-loading.html') %>
+  <% if (neue.spa) { %>
+    <%= require('@/spa-loading.html') %>
+  <% } %>
   <ssr-body>
 </body>
 
