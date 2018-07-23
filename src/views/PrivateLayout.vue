@@ -4,3 +4,11 @@
     <router-view/>
   </div>
 </template>
+
+<script>
+import tokenOrRedirect from "@/middlewares/private";
+
+export default {
+  middlewares: [tokenOrRedirect]
+};
+</script>

@@ -19,7 +19,7 @@
 export default {
   asyncData() {
     return new Promise(resolve => {
-      setTimeout(resolve, 5000);
+      setTimeout(resolve, 2000);
     });
   }
 };

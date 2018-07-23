@@ -33,10 +33,7 @@ module.exports = app => {
       }
     } catch (err) {}
 
-    ctx.status = 403;
-    ctx.body = {
-      error: "Bad token"
-    };
+    ctx.body = {};
   });
 
   router.get("/api/private", async ctx => {

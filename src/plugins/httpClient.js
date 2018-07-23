@@ -1,9 +1,11 @@
 import Vue from "vue";
 import axios from "axios";
 
-const httpClient = axios.create({
-  // baseURL: "http://localhost:8080"
-});
+const httpClient = axios.create();
+
+if (!process.client) {
+  httpClient.defaults.baseURL = "http://localhost:8080";
+}
 
 Vue.prototype.$http = {
   token: null,
