@@ -12,7 +12,8 @@ module.exports = {
     lazyLoad: {
       src: "@/plugins/lazyLoad",
       ssr: false
-    }
+    },
+    httpClient: "@/plugins/httpClient"
   },
   ssr: {
     server(app) {
