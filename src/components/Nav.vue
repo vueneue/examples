@@ -13,6 +13,15 @@
       <li>
         <router-link to="/loading">Loading</router-link>
       </li>
+      <li>
+        <router-link to="/lazy">Lazy load</router-link>
+      </li>
+      <li>
+        <router-link to="/login">Login</router-link>
+      </li>
+      <li>
+        <router-link to="/private">Private</router-link>
+      </li>
     </ul>
   </nav>
 </template>

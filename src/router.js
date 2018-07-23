@@ -4,7 +4,11 @@ export default () => {
   return new Router({
     mode: process.ssr ? "history" : "hash",
     routes: [
-      { path: "/", name: "home", component: () => import("./views/Home.vue") },
+      {
+        path: "/",
+        name: "home",
+        component: () => import("./views/Home.vue")
+      },
       {
         path: "/about",
         name: "about",
@@ -19,6 +23,16 @@ export default () => {
         path: "/loading",
         name: "loading",
         component: () => import("./views/LongLoading.vue")
+      },
+      {
+        path: "/lazy",
+        name: "lazy",
+        component: () => import("./views/LazyLoad.vue")
+      },
+      {
+        path: "/login",
+        name: "login",
+        component: () => import("./views/Login.vue")
       },
       {
         path: "/private",

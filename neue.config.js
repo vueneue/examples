@@ -8,6 +8,15 @@ module.exports = {
     spaLoader: {
       src: "@/plugins/spaLoader",
       ssr: false
+    },
+    lazyLoad: {
+      src: "@/plugins/lazyLoad",
+      ssr: false
+    }
+  },
+  ssr: {
+    server(app) {
+      require("./api")(app);
     }
   }
 };

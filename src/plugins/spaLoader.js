@@ -1,6 +1,12 @@
 export default async ({ app }) => {
-  const loader = document.querySelector(".spa-loading");
-  if (loader) {
-    loader.remove();
-  }
+  app.$options.mounted = [
+    () => {
+      setTimeout(() => {
+        const loader = document.querySelector(".spa-loading");
+        if (loader) {
+          loader.remove();
+        }
+      }, 500);
+    }
+  ];
 };

@@ -33,7 +33,7 @@ export default {
       targets: ".anime-content",
       opacity: [0, 1],
       translateY: [50, 0],
-      duration: animDuration
+      duration: animDuration * 2
     });
   },
 
