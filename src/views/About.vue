@@ -18,6 +18,11 @@
 </template>
 
 <style>
+/*
+Add a fade transition to this page.
+See: https://router.vuejs.org/guide/advanced/transitions.html
+*/
+
 .fade-enter-active {
   transition: opacity 0.5s;
 }

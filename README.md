@@ -1,6 +1,12 @@
 # VueNeue examples
 
-**Work in progress**
+**Features**
+
+- CSS transition for pages
+- Javascript transition for pages
+- Navigation with loader
+- Loader for SPA routes
+- Auth with login & private page
 
 ## Project setup
 

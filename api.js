@@ -10,17 +10,24 @@ module.exports = app => {
   app.use(cookie());
 
   /**
-   * API
+   * Middleware to ready requests bodies
    */
   app.use(bodyParser());
 
+  // Create router for API
   const router = new Router();
 
+  /**
+   * Login route
+   */
   router.post("/api/login", async ctx => {
     ctx.set("content-type", "application/json");
     ctx.body = { token: jwt.sign({ name: ctx.request.body.name }, "shhhhh") };
   });
 
+  /**
+   * Me route
+   */
   router.get("/api/me", async ctx => {
     const header = ctx.header["authorization"] || "";
     const token = header.replace("Bearer ", "");
@@ -36,6 +43,9 @@ module.exports = app => {
     ctx.body = {};
   });
 
+  /**
+   * Private data
+   */
   router.get("/api/private", async ctx => {
     const header = ctx.header["authorization"];
     const token = header.replace("Bearer ", "");
@@ -61,5 +71,7 @@ module.exports = app => {
       error: "Bad token"
     };
   });
+
+  // Install router on Koa
   app.use(router.routes()).use(router.allowedMethods());
 };

@@ -16,6 +16,11 @@
 </template>
 
 <script>
+/**
+ * Simple page to demonstrate navigation loader & long loading asyncData()
+ * See: src/plugins/navLoader.js
+ */
+
 export default {
   asyncData() {
     return new Promise(resolve => {

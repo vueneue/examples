@@ -6,7 +6,7 @@
 </template>
 
 <script>
-import tokenOrRedirect from "@/middlewares/private";
+import tokenOrRedirect from "@/middlewares/tokenOrRedirect";
 
 export default {
   middlewares: [tokenOrRedirect]

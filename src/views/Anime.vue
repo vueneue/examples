@@ -16,6 +16,13 @@
 </template>
 
 <script>
+/**
+ * More complex page animations with AnimeJS
+ *
+ * We use mounted() to play enter animation and beforeRouteLeave() hook to play
+ * exit animation
+ */
+
 import anime from "animejs";
 
 const animDuration = 500;
