@@ -34,6 +34,12 @@ Vue.prototype.$http = {
         Authorization: `Bearer ${this.token}`
       }
     });
+  },
+  logout() {
+    if (process.client) {
+      require("js-cookie").remove("token", { path: "" });
+      this.token = null;
+    }
   }
 };
 

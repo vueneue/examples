@@ -14,19 +14,8 @@
 <script>
 export default {
   async asyncData({ app, error }) {
-    let data;
-    try {
-      data = (await app.$http.private()).data;
-    } catch (err) {
-      if (err.response) {
-        error("Forbidden", err.response.status);
-      } else {
-        throw err;
-      }
-    }
-
     return {
-      items: data
+      items: (await app.$http.private()).data
     };
   }
 };

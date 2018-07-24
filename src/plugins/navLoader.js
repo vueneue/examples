@@ -1,4 +1,4 @@
-export default async ({ app, router }) => {
+export default async ({ app, router, store }) => {
   app.$Progress.start();
 
   router.beforeResolve((to, from, next) => {
@@ -12,5 +12,13 @@ export default async ({ app, router }) => {
 
   router.afterEach((to, from) => {
     app.$Progress.finish();
+  });
+
+  app.$on("router.redirect", () => {
+    app.$Progress.finish();
+  });
+
+  router.onError(() => {
+    app.$Progress.fail();
   });
 };

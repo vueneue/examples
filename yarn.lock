@@ -788,8 +788,8 @@
   resolved "https://registry.yarnpkg.com/@vue/web-component-wrapper/-/web-component-wrapper-1.2.0.tgz#bb0e46f1585a7e289b4ee6067dcc5a6ae62f1dd1"
 
 "@vueneue/ssr-core@^0.3.0":
-  version "0.3.7"
-  resolved "https://registry.yarnpkg.com/@vueneue/ssr-core/-/ssr-core-0.3.7.tgz#00694bc384854f7ff362d51eae418ebfa7780c7a"
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@vueneue/ssr-core/-/ssr-core-0.3.10.tgz#2d325aad5a7444b359170241b37a2879dd6041d6"
   dependencies:
     chokidar "^2.0.4"
 
@@ -810,8 +810,8 @@
     webpack "^4.12.1"
 
 "@vueneue/vue-cli-plugin-ssr@^0.3.6":
-  version "0.3.8"
-  resolved "https://registry.yarnpkg.com/@vueneue/vue-cli-plugin-ssr/-/vue-cli-plugin-ssr-0.3.8.tgz#b7cdd8fb45d5874ce83e89303d31014667071c23"
+  version "0.3.10"
+  resolved "https://registry.yarnpkg.com/@vueneue/vue-cli-plugin-ssr/-/vue-cli-plugin-ssr-0.3.10.tgz#6963e80b70b4ba51c7bf9aabc6d5bc616090cb1a"
   dependencies:
     "@babel/parser" "^7.0.0-beta.51"
     chalk "^2.4.1"

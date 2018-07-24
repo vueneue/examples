@@ -55,7 +55,7 @@ export default {
     },
 
     onLogout() {
-      require("js-cookie").remove("token", { path: "" });
+      this.$http.logout();
       this.user = null;
     }
   }
