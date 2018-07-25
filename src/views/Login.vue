@@ -1,33 +1,44 @@
 <template>
-  <div>
-    <h1>Login</h1>
+  <page-layout>
+    <div class="content">
+      <h1 class="title">
+        {{ user.name ? `Welcome ${user.name}` : 'Login' }}
+      </h1>
 
-    <form
-      v-if="!user.name"
-      @submit.prevent="onSubmit"
-    >
-      <p v-if="showError && !user.name" class="error">
-        You need to be logged to access private page
-      </p>
-
-
-      <input v-model="name" type="text" placeholder="Enter your name...">
-      <button
-        type="submit"
+      <form
+        v-if="!user.name"
+        @submit.prevent="onSubmit"
       >
-        Login
-      </button>
-    </form>
+        <div v-if="showError && !user.name" class="notification is-danger">
+          You need to be logged to access private page
+        </div>
 
-    <div v-else>
-      Welcome {{ user.name }} !
-      <br>
-      <button @click="onLogout()">
-        Logout
-      </button>
+        <div class="field">
+          <label class="label">Username</label>
+          <input v-model="name" type="text" class="input">
+        </div>
+
+        <div class="field">
+          <button
+            type="submit"
+            class="button is-link"
+          >
+            Login
+          </button>
+        </div>
+
+      </form>
+
+      <div v-else>
+        <button 
+          class="button is-danger"
+          @click="onLogout()"
+        >
+          Logout
+        </button>
+      </div>
     </div>
-
-  </div>
+  </page-layout>
 </template>
 
 <script>
@@ -78,7 +89,7 @@ export default {
      */
     onLogout() {
       this.$http.logout();
-      this.user = null;
+      this.user = {};
     }
   }
 };

@@ -1,17 +1,19 @@
 <template>
-  <div>
-    <div
-      v-for="(item, index) in items"
-      :key="index"
-      class="image-item"
-    >
-      <img
-        v-lazyload
-        src="http://via.placeholder.com/600x400?text=..."
-        :data-src="item"
+  <page-layout>
+    <div class="content">
+      <div
+        v-for="(item, index) in items"
+        :key="index"
+        class="image-item"
       >
+        <img
+          v-lazyload
+          src="http://via.placeholder.com/600x400?text=..."
+          :data-src="item"
+        >
+      </div>
     </div>
-  </div>
+  </page-layout>
 </template>
 
 <script>

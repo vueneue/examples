@@ -1,8 +1,10 @@
 <template>
-  <div>
-    <h1>Private</h1>
-    <router-view/>
-  </div>
+  <page-layout>
+    <div class="content">
+      <h1 class="title">Private</h1>
+      <router-view/>
+    </div>
+  </page-layout>
 </template>
 
 <script>
