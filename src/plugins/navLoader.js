@@ -4,7 +4,11 @@ import VueProgressBar from "vue-progressbar";
 /**
  * Simple plugin to show a loader on pages changes
  */
-Vue.use(VueProgressBar);
+Vue.use(VueProgressBar, {
+  color: "#2E81ED",
+  failedColor: "#FF0000",
+  thickness: "5px"
+});
 
 export default async ({ app, router, store }) => {
   // On boot: start progress bar

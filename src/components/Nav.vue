@@ -1,21 +1,25 @@
 <template>
   <nav class="navbar is-fixed-top is-primary">
     <div class="container">
+
       <div class="navbar-brand">
-        <a role="button" class="navbar-burger" aria-label="menu" aria-expanded="false">
+        <label class="nav-toggle navbar-burger" for="nav-toggle-state">
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
           <span aria-hidden="true"></span>
-        </a>
+        </label>
       </div>
+
+      <input ref="burgerToggle" type="checkbox" id="nav-toggle-state" />
 
       <div class="navbar-menu">
         <router-link 
           v-for="item in items"
           :key="item.path"
+          :exact="true"
           class="navbar-item"
-          exact="true"
           active-class="is-active" :to="item.path"
+          @click.native="onClickItem"
         >
           {{ item.label }}
         </router-link>
@@ -36,28 +40,14 @@ export default {
       { label: "Login", path: "/login" },
       { label: "Private", path: "/private" }
     ]
-  })
+  }),
+
+  methods: {
+    onClickItem() {
+      if (this.$refs.burgerToggle.checked) {
+        this.$refs.burgerToggle.checked = false;
+      }
+    }
+  }
 };
 </script>
-
-
-<style scoped>
-nav {
-  padding: 20px;
-  text-align: center;
-  background: #eee;
-}
-
-ul {
-  list-style: none;
-  list-style-image: none;
-  display: flex;
-}
-
-ul li {
-  list-style: none;
-  list-style-image: none;
-  margin: 0 10px;
-}
-</style>
-

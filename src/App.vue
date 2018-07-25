@@ -1,6 +1,8 @@
 <template>
   <div id="app">
-    <vue-progress-bar></vue-progress-bar>
+    <no-ssr>
+      <vue-progress-bar></vue-progress-bar>
+    </no-ssr>
     <app-view/>
   </div>
 </template>

@@ -31,7 +31,7 @@ Vue.prototype.$http = {
       // On client side: store token in cookie
       if (process.client) {
         const Cookies = require("js-cookie");
-        Cookies.set("token", this.token);
+        Cookies.set("token", this.token, { path: "" });
       }
 
       return response;
@@ -67,9 +67,7 @@ Vue.prototype.$http = {
    */
   logout() {
     // On client side: remove cookie with token
-    if (process.client) {
-      require("js-cookie").remove("token", { path: "" });
-    }
+    require("js-cookie").set("token", "", { path: "" });
     this.token = null;
   }
 };
@@ -87,6 +85,6 @@ export default async ({ ctx }) => {
     // On client side
   } else {
     const Cookies = require("js-cookie");
-    Vue.prototype.$http.token = Cookies.get("token");
+    Vue.prototype.$http.token = Cookies.get("token") || "";
   }
 };
