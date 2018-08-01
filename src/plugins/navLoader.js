@@ -36,7 +36,7 @@ export default async ({ app, router, store }) => {
   });
 
   // When a route has an error
-  router.onError(() => {
+  app.$on("router.error", () => {
     app.$Progress.fail();
   });
 };
