@@ -61,7 +61,7 @@ export default {
   },
 
   data: () => ({
-    name: "",
+    name: '',
     user: null,
     showError: false
   }),
@@ -76,12 +76,12 @@ export default {
           .login(this.name)
           .then(() => {
             this.user = { name: this.name };
-            this.name = "";
+            this.name = '';
           })
-          .catch(() => alert("Error !"));
+          .catch(() => alert('Error !'));
         return;
       }
-      alert("Please fill name field");
+      alert('Please fill name field');
     },
 
     /**

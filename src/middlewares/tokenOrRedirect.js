@@ -1,7 +1,7 @@
 /**
  * Middleware to check if current user have a JWT
  */
-export default async ({ ctx, redirect, route }) => {
+export default async ({ ctx, redirect }) => {
   const redirectPath = `/login?error=1`;
 
   /**
@@ -17,8 +17,8 @@ export default async ({ ctx, redirect, route }) => {
      * On client side
      */
   } else {
-    const Cookies = require("js-cookie");
-    if (!Cookies.get("token")) {
+    const Cookies = require('js-cookie');
+    if (!Cookies.get('token')) {
       // If no cookie/token redirect to login page
       redirect(redirectPath);
     }

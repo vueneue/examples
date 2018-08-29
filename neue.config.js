@@ -2,7 +2,7 @@ module.exports = {
   /**
    * Below paths will not be server rendered
    */
-  spaPaths: ["/private", "/private/**/*"],
+  spaPaths: ['/private', '/private/**/*'],
 
   /**
    * Plugins
@@ -10,19 +10,19 @@ module.exports = {
   plugins: {
     // Theses plugins will be only included on client side
     navLoader: {
-      src: "@/plugins/navLoader",
+      src: '@/plugins/navLoader',
       ssr: false
     },
     spaLoader: {
-      src: "@/plugins/spaLoader",
+      src: '@/plugins/spaLoader',
       ssr: false
     },
     lazyLoad: {
-      src: "@/plugins/lazyLoad",
+      src: '@/plugins/lazyLoad',
       ssr: false
     },
     // This plugin will be installed on both side
-    httpClient: "@/plugins/httpClient"
+    httpClient: '@/plugins/httpClient'
   },
 
   /**
@@ -30,7 +30,7 @@ module.exports = {
    */
   ssr: {
     server(app) {
-      require("./api")(app);
+      require('./api')(app);
     }
   }
 };

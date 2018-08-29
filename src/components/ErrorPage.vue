@@ -50,9 +50,9 @@ export default {
 
   methods: {
     gotoHome() {
-      this.$store.commit("errorHandler/CLEAR");
-      if (this.$router.currentRoute.path != "/") {
-        this.$router.replace("/");
+      this.$store.commit('errorHandler/CLEAR');
+      if (this.$router.currentRoute.path != '/') {
+        this.$router.replace('/');
       }
     }
   }

@@ -14,8 +14,8 @@
 </template>
 
 <script>
-import ErrorPage from "./components/ErrorPage.vue";
-import AppNav from "./components/Nav.vue";
+import ErrorPage from './components/ErrorPage.vue';
+import AppNav from './components/Nav.vue';
 
 export default {
   components: {

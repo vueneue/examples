@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import tokenOrRedirect from "@/middlewares/tokenOrRedirect";
+import tokenOrRedirect from '@/middlewares/tokenOrRedirect';
 
 export default {
   middlewares: [tokenOrRedirect]

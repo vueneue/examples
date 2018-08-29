@@ -1,15 +1,9 @@
-import Vuex from 'vuex'
+import Vuex from 'vuex';
 
 export default () => {
   return new Vuex.Store({
-    state: {
-
-    },
-    mutations: {
-
-    },
-    actions: {
-
-    }
+    state: {},
+    mutations: {},
+    actions: {}
   });
 };

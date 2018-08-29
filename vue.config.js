@@ -1,12 +1,12 @@
 module.exports = {
   chainWebpack(chain) {
     chain.module
-      .rule("html")
+      .rule('html')
       .test(/\.html$/)
       .exclude.add([/index\.html/])
       .end()
-      .use("html")
-      .loader("html-loader")
+      .use('html')
+      .loader('html-loader')
       .options({
         minimize: true
       });
@@ -14,7 +14,7 @@ module.exports = {
   pwa: {
     workboxOptions: {
       templatedUrls: {
-        "/": "index.ssr.html"
+        '/': 'index.ssr.html'
       }
     }
   }

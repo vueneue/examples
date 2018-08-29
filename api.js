@@ -1,7 +1,7 @@
-const bodyParser = require("koa-bodyparser");
-const Router = require("koa-router");
-const cookie = require("koa-cookie").default;
-const jwt = require("jsonwebtoken");
+const bodyParser = require('koa-bodyparser');
+const Router = require('koa-router');
+const cookie = require('koa-cookie').default;
+const jwt = require('jsonwebtoken');
 
 module.exports = app => {
   /**
@@ -20,21 +20,21 @@ module.exports = app => {
   /**
    * Login route
    */
-  router.post("/api/login", async ctx => {
-    ctx.set("content-type", "application/json");
-    ctx.body = { token: jwt.sign({ name: ctx.request.body.name }, "shhhhh") };
+  router.post('/api/login', async ctx => {
+    ctx.set('content-type', 'application/json');
+    ctx.body = { token: jwt.sign({ name: ctx.request.body.name }, 'shhhhh') };
   });
 
   /**
    * Me route
    */
-  router.get("/api/me", async ctx => {
-    const header = ctx.header["authorization"] || "";
-    const token = header.replace("Bearer ", "");
+  router.get('/api/me', async ctx => {
+    const header = ctx.header['authorization'] || '';
+    const token = header.replace('Bearer ', '');
 
-    ctx.set("content-type", "application/json");
+    ctx.set('content-type', 'application/json');
     try {
-      if (jwt.verify(token, "shhhhh")) {
+      if (jwt.verify(token, 'shhhhh')) {
         ctx.body = jwt.decode(token);
         return;
       }
@@ -46,20 +46,20 @@ module.exports = app => {
   /**
    * Private data
    */
-  router.get("/api/private", async ctx => {
-    const header = ctx.header["authorization"];
-    const token = header.replace("Bearer ", "");
+  router.get('/api/private', async ctx => {
+    const header = ctx.header['authorization'];
+    const token = header.replace('Bearer ', '');
 
-    ctx.set("content-type", "application/json");
+    ctx.set('content-type', 'application/json');
 
     try {
-      if (jwt.verify(token, "shhhhh")) {
+      if (jwt.verify(token, 'shhhhh')) {
         ctx.body = [
           {
-            title: "My first private item"
+            title: 'My first private item'
           },
           {
-            title: "My second private item"
+            title: 'My second private item'
           }
         ];
         return;
@@ -68,7 +68,7 @@ module.exports = app => {
 
     ctx.status = 403;
     ctx.body = {
-      error: "Bad token"
+      error: 'Bad token'
     };
   });
 

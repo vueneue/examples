@@ -25,21 +25,21 @@
  * exit animation
  */
 
-import anime from "animejs";
+import anime from 'animejs';
 
 const animDuration = 500;
 
 export default {
   mounted() {
     anime({
-      targets: ".anime-title",
+      targets: '.anime-title',
       opacity: [0, 1],
       translateY: [-50, 0],
       duration: animDuration
     });
 
     anime({
-      targets: ".anime-content",
+      targets: '.anime-content',
       opacity: [0, 1],
       translateY: [50, 0],
       duration: animDuration * 2
@@ -48,14 +48,14 @@ export default {
 
   beforeRouteLeave(to, from, next) {
     anime({
-      targets: ".anime-title",
+      targets: '.anime-title',
       opacity: 0,
       translateY: -50,
       duration: animDuration
     });
 
     anime({
-      targets: ".anime-content",
+      targets: '.anime-content',
       opacity: 0,
       translateY: 50,
       duration: animDuration,

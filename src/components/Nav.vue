@@ -32,13 +32,13 @@
 export default {
   data: () => ({
     items: [
-      { label: "Home", path: "/" },
-      { label: "About", path: "/about" },
-      { label: "AnimeJS", path: "/anime" },
-      { label: "Loading", path: "/loading" },
-      { label: "Lazy load", path: "/lazy" },
-      { label: "Login", path: "/login" },
-      { label: "Private", path: "/private" }
+      { label: 'Home', path: '/' },
+      { label: 'About', path: '/about' },
+      { label: 'AnimeJS', path: '/anime' },
+      { label: 'Loading', path: '/loading' },
+      { label: 'Lazy load', path: '/lazy' },
+      { label: 'Login', path: '/login' },
+      { label: 'Private', path: '/private' }
     ]
   }),
 
